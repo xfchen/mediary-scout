@@ -82,7 +82,7 @@ services:
  #       condition: service_started
     environment:
       # App self-creates its schema on first query (CREATE TABLE IF NOT EXISTS).
-      MEDIA_TRACK_POSTGRES_URL: ${POSTGRES_URL:postgres://mediatrack:mediatrack@postgres:5432/mediatrack}
+      MEDIA_TRACK_POSTGRES_URL: ${POSTGRES_URL}
       # Bundled PanSou via the compose service name (override per-instance in 设置).
       #PANSOU_BASE_URL: http://pansou
       PANSOU_BASE_URL: https://so.252035.xyz
