@@ -173,7 +173,7 @@ services:
       # "" because cloudflared rejects an empty protocol value ("unknown protocol").
       # On UDP-blocked/throttled networks auto often doesn't fall back cleanly (tunnel
       # won't register or keeps dropping) — set TUNNEL_TRANSPORT_PROTOCOL=http2 in .env.
-      TUNNEL_TRANSPORT_PROTOCOL: ${TUNNEL_TRANSPORT_PROTOCOL:-auto}
+      #TUNNEL_TRANSPORT_PROTOCOL: ${TUNNEL_TRANSPORT_PROTOCOL:-auto}
     # Lets the connector resolve the Docker host, so a tunnel Public Hostname of
     # type SSH can point at the host's sshd (host.docker.internal:22) — enabling
     # SSH-over-tunnel from anywhere without opening a port. Harmless if unused.
