@@ -82,13 +82,13 @@ services:
  #       condition: service_started
     environment:
       # App self-creates its schema on first query (CREATE TABLE IF NOT EXISTS).
-      MEDIA_TRACK_POSTGRES_URL: ${POSTGRES_URL}
+      MEDIA_TRACK_POSTGRES_URL=${POSTGRES_URL}
       # Bundled PanSou via the compose service name (override per-instance in 设置).
       #PANSOU_BASE_URL: http://pansou
-      PANSOU_BASE_URL: https://so.252035.xyz
-      MEDIA_TRACK_SEARCH_PROVIDER: tmdb
-      MEDIA_TRACK_WORKFLOW_ADAPTER: pansou
-      MEDIA_TRACK_STORAGE_ADAPTER: "115"
+      PANSOU_BASE_URL=https://so.252035.xyz
+      MEDIA_TRACK_SEARCH_PROVIDER=tmdb
+      MEDIA_TRACK_WORKFLOW_ADAPTER=pansou
+      MEDIA_TRACK_STORAGE_ADAPTER="115"
       # Live trio: pansou + 115 REQUIRE the vercel-ai agent (assertWorkflowAgentAdapterPolicy).
       # "real" is not a valid value — it fails the policy and the worker can never drain the
       # queue (获取 stuck "排队", category dirs never provisioned). Must be vercel-ai.
